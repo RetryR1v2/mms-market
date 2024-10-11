@@ -98,17 +98,17 @@ RegisterServerEvent('mms-market:server:GetListings',function ()
     local Character = VORPcore.getUser(src).getUsedCharacter
     local Identifier = Character.identifier
     local Charidentifier = Character.charIdentifier
-    local result = MySQL.query.await("SELECT * FROM mms_marketlicense WHERE charidentifier=@charidentifier", { ["charidentifier"] = Charidentifier})
-    if #result > 0 then
+    --local result = MySQL.query.await("SELECT * FROM mms_marketlicense WHERE charidentifier=@charidentifier", { ["charidentifier"] = Charidentifier})
+    --if #result > 0 then
         local Listing = MySQL.query.await("SELECT * FROM mms_market", { })
         if #Listing > 0 then
             TriggerClientEvent('mms-market:client:ShowListings',src,Listing)
         else
             VORPcore.NotifyTip(src, _U('NoEntrys'), 4000)
         end
-    else
-        VORPcore.NotifyTip(src, _U('NeedLicenseFirst'), 4000)
-    end
+    --else
+        --VORPcore.NotifyTip(src, _U('NeedLicenseFirst'), 4000)
+    --end
 end)
 
 RegisterServerEvent('mms-market:server:BuyOffer',function(ID,ItemName,ItemLabel,Amount,Price,SellerCharId)

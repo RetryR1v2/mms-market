@@ -12,7 +12,7 @@
 # Changelog
 
 - 1.1.0 Initial Release Version
-
+- 1.1.1 No Need to have a License as Buyer just to Sell
 
 # installation 
 
