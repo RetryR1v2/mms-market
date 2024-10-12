@@ -176,8 +176,6 @@ RegisterServerEvent('mms-market:server:RemoveMyOffer',function(ID,ItemName,ItemL
     local Identifier = Character.identifier
     local Charidentifier = Character.charIdentifier
     local CanCarry = exports.vorp_inventory:canCarryItem(src, ItemName, Amount)
-    print(ItemName)
-    print(Amount)
     if CanCarry then
     local result = MySQL.query.await("SELECT * FROM mms_market WHERE id=@id", { ["id"] = ID})
         if #result > 0 then
@@ -190,6 +188,7 @@ RegisterServerEvent('mms-market:server:RemoveMyOffer',function(ID,ItemName,ItemL
             local NewListings = MyListings - 1
             MySQL.update('UPDATE `mms_marketlicense` SET listings = ? WHERE charidentifier = ?',{NewListings, Charidentifier})
         end
+        exports.vorp_inventory:addItem(src, ItemName, Amount)
         VORPcore.NotifyTip(src, _U('RemovedOwnOffer'), 5000)
     else
         VORPcore.NotifyTip(src, _U('NotEnoghSpace'), 5000)

@@ -17,7 +17,7 @@ Config.WHAvatar = '' -- must be 30x30px
 -- Script Settings
 
 Config.LicensePrice = 500  -- Price in $
-Config.MaxListings = 3 -- Max Offers in Market
+Config.MaxListings = 10 -- Max Offers in Market
 
 Config.Markets = {
     {

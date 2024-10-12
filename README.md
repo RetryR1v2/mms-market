@@ -13,6 +13,7 @@
 
 - 1.1.0 Initial Release Version
 - 1.1.1 No Need to have a License as Buyer just to Sell
+- 1.1.2 Fixed Bug that Items are Gone if you Remove your Own Offer
 
 # installation 
 

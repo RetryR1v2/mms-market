@@ -594,6 +594,12 @@ AddEventHandler('mms-market:client:ShowMyListings',function (MyListing)
                 ['border-radius'] = '6px'
                 }
             }, function()
+                local ItemName = v.itemname
+                local ItemLabel = v.itemlabel
+                local Amount = v.amount
+                local Price = v.price
+                local SellerCharId = v.charidentifier
+                local ID = v.id
                 TriggerServerEvent('mms-market:server:RemoveMyOffer',ID, ItemName,ItemLabel,Amount,Price,SellerCharId)
                 Marketplace:Close({ 
                 })
